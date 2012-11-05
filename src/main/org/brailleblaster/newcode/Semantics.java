@@ -29,7 +29,7 @@
   * Maintained by John J. Boyer john.boyer@abilitiessoft.com
 */
 
-package wordprocessor;
+package newcode;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -108,16 +108,6 @@ private void handleNamespaces (String nm) {
 }
 
 /**
- * Handle error messages.
- * Param: fileName, name of semantic file.
- *        lineNumber, line on which the eror occurred.
- *        message, error message.
- */
-private void showErrors (String fileName, int lineNumber, String 
-message) {
-}
- 
-/**
  * Compile a semantic-action file. If an include statement is 
  * encountered this method calls itself recursively.
  * Param: filename.
@@ -137,12 +127,10 @@ private boolean compileFile (String fileName) {
   boolean isComment = false;
   int ch = 0;
   int prevch = 0;
-  int lineNumber = 0;
   while (true) {
   numbytes = 0;
   prevch = 0;
   isComment = false;
-  lineNumber++;
   while (true) {
   try {
   ch = semFile.read();
@@ -187,9 +175,8 @@ private boolean compileFile (String fileName) {
   continue;
   }
   try {
-  semanticTable[lineCount].markup = parts[0];
   } catch (ArrayIndexOutOfBoundsException e) {
-  showErrors (fileName, lineNumber, "Too many semantic entries.");
+  semanticTable[lineCount].markup = parts[0];
   return false;
   }
   semanticLookup.put (semanticTable[lineCount].markup, lineCount);
@@ -207,10 +194,14 @@ private boolean compileFile (String fileName) {
 }
  
 /**
- * This method finds the root element of workingDocument and 
- * concatenates with the path to the semantics directory, and add the 
- * ".sem" suffix. The resulting string is then passed to compileFile, 
- * which constructs the semanticsTable and the sookupSemantics hasTable.
+ * Find the root element of workingDocument and look for a file with the 
+ * root name concatenated with .sem in the semantics directory. Read 
+ * this file into semanticTable, separating the various strings and putting 
+ * them into their proper fields. Then construct the semanticLookup
+ * Hashtable. If no semantic-action file is found construct a bare-bones 
+ * semanticTable, and output a prototype semantic-action file in the 
+ * user's semantics directory. Show a dialog box informing the user of 
+ * the situation.
  */
 private void makeSemanticsTable() {
   internetAccessRequired = false;
@@ -232,18 +223,17 @@ private void recordNewEntries (String newEntry) {
 
 /**
  * If any new entries have been recorded, output them to a file in the 
- * user's semantics directory. First sort them so that element names 
- * come first, then element,attribute pairs, then 
- * element,attribute,attribute,balue triplets.
+ user's semantics directory. First sort them so that element names come 
+ first, then element,attribute pairs, then 
+ element,attribute,attribute,balue triplets.
  */
 private void outputNewEntries() {
 }
 
 /**
  * Evaluate any Xpath expressions that the semanticTable may contain and 
- * add the bbsem attribute to the nodes in the nodeset. The bbsem 
- * attribute has the index of the entry in the semanticTable as its 
- * valuel
+ add the bbsem attribute to the nodes in the nodeset. The bbsem attribut 
+ has the index of the entry in the semanticTable as its valuel
  */
 private void doXPathExpressions() {
 }
@@ -253,42 +243,11 @@ private void doXPathExpressions() {
  * expressions in the semanticTable have already been aplied. The 
  * parse tree is traversed, and the semanticTable is checked for matching
  * markup. If found, a bbsem attribute with a value of the index in the 
- * semanticTable is added to the element node. The attribute is not 
- * added if it is already present because it was set by an XPath 
- * expression.
+ * semanticTable is added to the element node.
  */
-private void addBBSemAttr (Node node) {
-Node newNode;
-for (int i = 0; i < node.getChildCount(); i++) {
-newNode = node.getChild(i);
-if (newNode instanceof Element) {
-Element element = (Element)newNode;
-/* Check if in SemanticsTable. If so, add bbsem attribute, unless 
- * already there.*/
-if (element.getAttribute ("bbsem") == null) {
-helpAddAttr (element);
-}
-/* Process this element recursively */
-addBBSemAttr (element);
-}
-}
+private void addBBSemAttr (Element element) {
 }
 
-/**
- * This is a helper method for addBBSemAttr. It scanns through 
- * attributges to see if elementName,attrName,attrValue or 
- * elementName,attrrName match some markup0 in semanticsTable. If so, it 
- * adds the bbsem attribute with the index of the semanticEntry to the 
- * element and returns. If not 
- * it checks to see if the elementName alone 
- * matches and adds the bbsem attribute if it does. It then returnsj.
- * param element: the element to be checked.
- */
-private void helpAddAttr (Element element) {
-  String elementName = element.getLocalName();
-}
- 
- 
 /**
  * The complete path of the document file.
  */
@@ -312,6 +271,7 @@ return;
 new Notify(lh.localValue("couldNotOpen") + " " + fileName);
 return;
 }
+  file = null;
   makeSemanticsTable();
   doXPathExpressions();
   Element rootElement = workingDocument.getRootElement();
