@@ -46,8 +46,8 @@ import org.liblouis.liblouisutdml;
 public class Main {
 public static void main (String[] args) {
 BBIni.initialize(args);
-BBIni.setVersion ("brailleblaster-1.4.0");
-BBIni.setReleaseDate ("July 17, 2012");
+BBIni.setVersion ("brailleblaster-2012.2");
+BBIni.setReleaseDate ("December 11, 2012");
 if (BBIni.haveSubcommands()) {
 new Subcommands(args);
 } else {
