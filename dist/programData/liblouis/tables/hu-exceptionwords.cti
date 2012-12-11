@@ -192,6 +192,7 @@ partword vendég =	For example vendéggyermek, vendéggyülekezet word
 partword világosság =	For example világossággyújtásra word
 partword virág =	For example virággyapjaikat word
 partword csillaggy 146-24-123-123-1-1245-1456	For example csillaggyárnak word
+partword hazugság 125-1-126-136-1245-234-4-1245	For example hazugsággyár word need this exception
 
 #ny, nny related exceptions
 #Following exception parts need marking nny letter pairs with single n and nny braille dot combinations
@@ -311,6 +312,8 @@ partword fedezéssz 124-15-145-15-126-16-234-156	For example felfedezésszámba 
 partword város =	For example városzajon, városzajt, városzsivaj words
 always városzt 1236-4-1235-135-156-2345	Városztályába word is an exception the prewious defined general város words related rule
 always részárás 1235-16-234-126-4-1235-4-234	For example részárás beginning words need this exception
+always légzés 123-16-1245-126-16-234	For example légzésszám, légzésszerű, légzészavar words
+partword szavar 234-126-1-1236-1-1235	General exception with handles more szavar style words
 
 #szs related exceptions
 #This exception list containing some words with need using single s and zs braille dots
@@ -735,6 +738,9 @@ partword hármassz 125-4-1235-134-1-234-156	For example hármasszak, hármasszig
 begword hússzöv 125-346-234-156-12345-1236	For example Hússzövetség company name or normal hússzövet words need this exception
 partword edzéssz 15-145-126-16-234-156	For example edzésszám word
 begword hamissz 125-1-134-24-234-156	For example hamisszínes word
+begword rákossz 1235-4-13-135-234-156	For example Rákosszentmihály town part name
+partword kezdéssz 13-15-126-145-16-234-156	For example bekezdésszintű word need this exception
+partword mászás 134-4-156-4-234	For example hangyamászásszerű word need this exception
 
 #ty, lly tty related exceptions
 #This exception part containing english words with need presenting original english braille rules
@@ -821,6 +827,7 @@ partword lemez 123-15-134-15-126	For example lemezstúdió word
 always mézser 134-16-126-234-15-1235	For example mézser word
 always rézsut 1235-16-345-136-2345	For example rézsut word
 partword dörzször 145-12345-1235-345-126-12345-1235	For example dörzszörej word
+begword rajzsab 1235-1-245-126-234-1-12	For example rajzsablon word need this exception
 
 #Historical person names related exceptions
 always táncsics 2345-4-1345-146-24-146	Táncsics Mihály is a historical person for 1848. march 15 hungarian revolution
