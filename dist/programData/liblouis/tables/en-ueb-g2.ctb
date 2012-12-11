@@ -1,13 +1,8 @@
-# liblouis: English, U.S. Grade 2 (ABAE) table
+# liblouis: Unified English Braille Code (Grade 2)
 #
-#  Based on the Linux screenreader BRLTTY, copyright (C) 1999-2006 by
-#  The BRLTTY Team
-#
-#  Copyright (C) 2004, 2005, 2006
-#  ViewPlus Technologies, Inc. www.viewplus.com
-#  and
-#  JJB Software, Inc. www.jjb-software.com
-#  All rights reserved
+#Based on U.S. English Grade 2 braille.
+#Modified by Joseph Lee <joseph.lee22590@gmail.com>
+#Used for testing purposes.
 #
 #  This file is free software; you can redistribute it and/or modify it
 #   under the terms of the Lesser or Library GNU General Public License 
@@ -37,8 +32,8 @@ noletsignafter '
 multind 56-6 letsign capsign
 
 # Contractions beginning with the letter a
-largesign a 1
-largesign A 1
+word a 1
+word A 1
 always aar 1-345 Aaron
 always aa 1-1 back-translation: maasai
 word about 1-12
@@ -68,7 +63,6 @@ word again 1-1245
 contraction ag
 word against 1-1245-34
 always agery =
-midendword ally 6-13456
 word almost 1-123-134
 contraction alm
 word already 1-123-1235
@@ -81,8 +75,8 @@ contraction alt
 word always 1-123-2456
 contraction alw
 midendword ance 46-15
-largesign and 12346
-always andar 12346-345 staodard
+always and 12346
+always andar 12346-345 standard
 midendword anda 12346-1 panda
 midword angh = Shanghai
 begword anted =
@@ -94,14 +88,12 @@ word aright 1-5-1235
 word as 1356
 contraction as
 always athe 1-2346 back-translation: lathe
-midendword ation 6-1345
 midendword aunder 1-136-1345-145-12456 saunders
 begword auto = autofocus
 syllable away =
 
 # the letter b
 midword bb 23
-midendword bble 12-3456
 lowword be 23
 begword be 23
 begword bea 12-2
@@ -109,7 +101,7 @@ always beu = Beulah
 always bear 12-15-345
 begword beatif 23-1-2345-24-124
 begword beatit 23-1-2345-24-2345
-begword beatr 23-1-2345-1235 Beatrice
+begword beatr 12-2-2345-1235 Beatrice
 always beck 12-15-14-13
 always bed 12-1246
 begword beda 23-145-1 bedazzle
@@ -135,10 +127,10 @@ begword belm = Belmont
 always belt =
 begword belw = belwether
 always ben 12-26
-begword beni 12-26-24
-begword benif 23-1345-24-124 benificient
+begword beni 23-1345-24
+begword benif 12-26-24-124 benificient
 sufword benign 23-1345-24-1245-1345 benignity
-begword benov 23-1345-135-1236 benovolent
+begword benov 12-26-135-1236 benovolent
 begword benu 23-1345-136 benumbed
 begword ber 12-12456
 begword bera 23-1235-1 berating
@@ -157,7 +149,6 @@ begword bever 12-5-15 Beverly beverage
 always bio =
 midendword bious 12-24-1256-234 dubious
 always bottlen = bottlenosed
-joinword by 356
 word because 23-14
 word bec =
 sufword before 23-124
@@ -174,7 +165,6 @@ word bet =
 word beyond 23-13456
 word bey =
 always bleu =
-midendword ble 3456
 midendword bleau 12-123-2-136 tableau
 syllable bleed 12-123-15-1246 nosebleed
 always bless 12-46-234 joblessness
@@ -195,8 +185,6 @@ always chs 16-234 dachshund
 always chloro 16-123-135-1235-135
 begword cofac = cofactor
 always cofound 14-135-124-46-145
-begword com 36
-sufword common 36-134-135-1345 commonest
 begword con 25
 sufword conceive 25-14-1236
 sufword conceiving 25-14-1236-1245
@@ -242,7 +230,6 @@ word declaring 145-14-123-1245
 contraction dclg
 begword deref = dereferencing
 begword dereg = deregulation
-midword dd 256
 begword dedic 145-1246-24-14 dedicated
 always dedu = nondeductible
 begword deno = denote
@@ -325,7 +312,7 @@ always fein 124-15-35 Feingold
 always first 124-34
 always fever 124-15-1236-12456
 always ffor 124-123456
-largesign for 123456
+always for 123456
 begword fora 123456-1 foramen
 always fore 123456-15
 begword forens 123456-26-234 forensic
@@ -419,7 +406,6 @@ midword ingenc 346-26-14 contingency
 midword ingen 35-1245-26 palingenesis (new birth)
 midword ingi 35-1245-24 meningitis
 midendword inging 346-346 bringing
-joinword into 35-235
 always isinglass 24-234-35-1245-123-1-234-234
 always isomer 24-234-135-134-12456
 word it 1346
@@ -521,7 +507,7 @@ word O 135
 midword oed = Schroeder
 always oen = Phoenix
 midendword oence 135-26-14-15 electroencephalogram
-largesign of 12356
+always of 12356
 midendword ofar 135-124-345 insofar
 midendword ofa 12356-1 back-translation: sofa
 midword ofor 135-123456
@@ -555,7 +541,6 @@ always ourselves 1256-1235-1236-234
 word out 1256
 always ought 5-1256
 always ow 246
-word o'clock 135-3-14
 
 # the letter p
 prfword paid 1234-145
@@ -677,7 +662,6 @@ always spirit 456-234
 midendword ssword 234-234-45-2456 crossword 
 partword st 34
 always sth 234-1456
-always st. 34-256
 always sthe 234-2346
 word still 34
 always stime 234-5-2345
@@ -697,7 +681,6 @@ word this 1456
 word thyself 1456-13456-124
 word tiddledywinks 2345-24-256-123-15-145-13456-2456-35-13-234
 always tnam =
-joinword to 235
 word today 2345-145
 contraction td
 word tomorrow 2345-134
@@ -707,7 +690,7 @@ contraction tn
 always turtledove =
 always thead 2345-125-2-145
 always theast 1456-15-1-34
-largesign the 2346
+always the 2346
 always thea 2346-1 theater
 word themselves 2346-134-1236-234
 always their 456-2346
@@ -764,7 +747,7 @@ lowword Were 6-2356 for back-translation
 always where 5-156
 word whereupon 5-156-45-136
 word wherever 156-12456-5-15
-largesign with 23456
+always with 23456
 always word 45-2456
 word whose 45-156
 always work 5-2456
